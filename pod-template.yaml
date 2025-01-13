@@ -8,6 +8,11 @@ spec:
     - image: apache/airflow:2.2.4
       imagePullPolicy: IfNotPresent
       name: base
+      env:
+        - name: AIRFLOW__CORE__SQL_ALCHEMY_CONN
+          value: postgresql://admin:test123@tien-test-3b2od-postgres-wt4ug6-custom-resource-service:5432/postgresdb
+        - name: AIRFLOW__CORE__EXECUTOR
+          value: KubernetesExecutor
       volumeMounts:
         - mountPath: "/opt/airflow/logs"
           name: logs-pv
