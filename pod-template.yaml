@@ -36,4 +36,4 @@ spec:
         claimName: airflow-dags
     - name: logs-pv 
       persistentVolumeClaim: 
-        claimName: airflow-dags
+        claimName: airflow-logs
